@@ -1,0 +1,8 @@
+# only the site itself is published
+.claude/
+.openai/
+GPT_version/
+Lessons/
+dist/
+update.cjs
+Eugen's studying plan.*
