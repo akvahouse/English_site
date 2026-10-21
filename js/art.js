@@ -91,5 +91,12 @@ const ART = (() => {
     <text x="200" y="198" text-anchor="middle" class="s-text s">be + прикметник · do + дієслово · the right word</text>
     <g class="float"><text x="28" y="62" font-size="26">🔍</text></g><g class="float d3"><text x="344" y="196" font-size="26">🔊</text></g>`);
 
-  return { trial, tobe1, tobe2, presimple, chunks, beordo, negatives, questions, questions2, mistakes };
+  const visual = wrap("Картинки й звук", `
+    <g class="pulse d1"><rect x="40" y="40" width="96" height="96" rx="22" class="s-c1"/><text x="88" y="102" text-anchor="middle" font-size="48">😩</text></g>
+    <g class="pulse d2"><rect x="152" y="40" width="96" height="96" rx="22" class="s-c2"/><text x="200" y="102" text-anchor="middle" font-size="48">😨</text></g>
+    <g class="pulse d3"><rect x="264" y="40" width="96" height="96" rx="22" class="s-c3"/><text x="312" y="102" text-anchor="middle" font-size="48">🏆</text></g>
+    <g class="float d2"><text x="190" y="178" text-anchor="middle" font-size="34">🔊</text></g>
+    <text x="200" y="206" text-anchor="middle" class="s-text s">Listen · Look · Choose</text>`);
+
+  return { trial, tobe1, tobe2, presimple, chunks, beordo, negatives, questions, questions2, visual, mistakes };
 })();

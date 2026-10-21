@@ -186,10 +186,28 @@ a.card:hover .card-art .art{transform:scale(1.06) rotate(-1deg)}
 .snd{display:inline-flex;align-items:center;gap:8px;font-size:16px}
 .tts-warn{margin:0 0 12px}
 
-/* ---------- 10-та картка ---------- */
-.card:nth-child(10) .num{background:#fde7ee;color:#b0214e}
+/* ---------- 10-та і 11-та картки ---------- */
+.card:nth-child(10) .num{background:#efe7fd;color:#5b2ab0}
+.card:nth-child(11) .num{background:#fde7ee;color:#b0214e}
 @media (prefers-color-scheme:dark){
-.card:nth-child(10) .num{background:#3a1522;color:#f58aa8}
+.card:nth-child(10) .num{background:#2a1a4a;color:#c4a2f5}
+.card:nth-child(11) .num{background:#3a1522;color:#f58aa8}
 }
 .mtable{width:100%;border-collapse:collapse;margin:8px 0 14px}
 .mtable th,.mtable td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+
+/* ---------- Анімовані сцени ---------- */
+.scene{display:inline-flex;align-items:center;justify-content:center;gap:.12em;flex-wrap:wrap;font-size:inherit;line-height:1.1}
+.sc-e{display:inline-block;animation-duration:2.2s;animation-iteration-count:infinite;animation-timing-function:ease-in-out;animation-delay:var(--d,0s)}
+.a-bounce{animation-name:sc-bounce}.a-float{animation-name:floaty}.a-wiggle{animation-name:sc-wiggle}.a-pulse{animation-name:pulse}.a-sway{animation-name:sc-sway}
+@keyframes sc-bounce{0%,100%{transform:translateY(0)}30%{transform:translateY(-12px)}55%{transform:translateY(0)}70%{transform:translateY(-4px)}}
+@keyframes sc-wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-9deg)}75%{transform:rotate(9deg)}}
+@keyframes sc-sway{0%,100%{transform:translateX(0) rotate(0)}50%{transform:translateX(7px) rotate(4deg)}}
+.stage{display:flex;justify-content:center;align-items:center;min-height:130px;font-size:72px;margin:10px 0 14px;padding:16px;border-radius:20px;background:linear-gradient(135deg,var(--accent-soft),var(--card));border:2px solid var(--line);animation:popin .5s var(--ease)}
+.sentence{font-size:22px;text-align:center;margin:6px 0 16px}
+.blank{display:inline-block;min-width:96px;padding:2px 12px;border-bottom:3px solid var(--accent);text-align:center;font-weight:700;color:var(--accent)}
+.blank.ok{color:var(--ok);border-color:var(--ok)}.blank.fixed{color:var(--bad);border-color:var(--bad)}
+.hearpics .pic-e{font-size:46px}
+@media (prefers-reduced-motion:reduce){.sc-e,.stage{animation:none}}
+.vsc{font-size:34px;width:150px;white-space:nowrap}
+.vtable td{vertical-align:middle}

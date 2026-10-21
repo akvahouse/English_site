@@ -148,13 +148,13 @@ const playSound = (text, slow, onFail) => {
   const p = a.play();
   if (p && p.catch) p.catch(e => { if (!e || e.name !== "NotAllowedError") fall(); });
 };
-const soundBar = (q, box) => {
+const soundBar = (q, box, auto = true) => {
   const warn = box.querySelector(".tts-warn");
   const play = slow => playSound(q.say, slow, () => { warn.hidden = false; });
   box.querySelector(".snd-fast").onclick = () => play(false);
   box.querySelector(".snd-slow").onclick = () => play(true);
-  setTimeout(() => play(false), 300);
-  return warn;
+  if (auto) setTimeout(() => play(false), 300);
+  return play;
 };
 const soundHtml = () => `<div class="listen-bar"><button type="button" class="btn snd snd-fast">🔊 Слухати</button><button type="button" class="btn ghost snd snd-slow">🐢 Повільно</button></div>
   <p class="hint tts-warn" hidden>Браузер не відтворює звук. Перевірте гучність або відкрийте сайт у Chrome/Edge — а поки що можна розкрити текст нижче.</p>`;
@@ -189,6 +189,69 @@ QTYPES.dictate = (q, box, finish, { esc, norm }) => {
   };
   chk.onclick = check;
   inp.onkeydown = e => { if (e.key === "Enter") check(); };
+};
+
+/* ---------- Анімовані сцени з емодзі ---------- */
+const sceneHtml = scene => {
+  let parts;
+  try { parts = [...new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(scene)].map(s => s.segment); } catch { parts = Array.from(scene); }
+  const anims = ["bounce", "float", "wiggle", "pulse", "sway"];
+  return `<span class="scene">${parts.filter(p => p.trim()).map((c, k) => `<span class="sc-e a-${anims[k % anims.length]}" style="--d:${(k * .37).toFixed(2)}s">${c}</span>`).join("")}</span>`;
+};
+// Після відповіді показуємо кнопки звуку й одразу читаємо правильне речення
+const revealSound = (q, box) => {
+  box.querySelector(".listen-bar").hidden = false;
+  const play = soundBar(q, box, false);
+  setTimeout(() => play(false), 250);
+};
+const hiddenSound = () => soundHtml().replace('class="listen-bar"', 'class="listen-bar" hidden');
+
+/* ---------- Почути речення й обрати анімовану картинку ---------- */
+QTYPES.hearpic = (q, box, finish, { esc }) => {
+  box.innerHTML = `<p class="q">${esc(q.q)}</p>${soundHtml()}<div class="pics hearpics">${q.options.map((o, k) =>
+    `<button class="pic" style="--i:${k}" data-k="${k}"><span class="pic-e">${sceneHtml(o.e)}</span><span class="pic-t">${esc(o.t)}</span></button>`).join("")}</div>`;
+  soundBar(q, box);
+  let done = false;
+  box.querySelectorAll(".pic").forEach(b => b.onclick = () => {
+    if (done) return; done = true;
+    const k = +b.dataset.k, ok = k === q.answer;
+    box.querySelectorAll(".pic").forEach(x => { x.disabled = true; if (+x.dataset.k === q.answer) x.classList.add("ok"); });
+    if (!ok) b.classList.add("bad");
+    finish(ok, q.options[k].t, q.options[q.answer].t, q.no && q.no[k]);
+  });
+};
+
+/* ---------- Сцена + речення з пропуском ---------- */
+QTYPES.scenegap = (q, box, finish, { esc }) => {
+  const [a, b] = q.sentence.split("___");
+  box.innerHTML = `<p class="q">${esc(q.q)}</p><div class="stage">${sceneHtml(q.scene)}</div>
+    <p class="sentence">${esc(a)}<span class="blank" id="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>${esc(b || "")}</p>
+    <div class="opts">${q.options.map((o, k) => `<button class="opt" data-k="${k}">${esc(o)}</button>`).join("")}</div>${hiddenSound()}`;
+  let done = false;
+  box.querySelectorAll(".opt").forEach(bt => bt.onclick = () => {
+    if (done) return; done = true;
+    const k = +bt.dataset.k, ok = k === q.answer;
+    box.querySelectorAll(".opt").forEach(x => { x.disabled = true; if (+x.dataset.k === q.answer) x.classList.add("ok"); });
+    if (!ok) bt.classList.add("bad");
+    const bl = box.querySelector("#blank"); bl.textContent = q.options[q.answer]; bl.classList.add(ok ? "ok" : "fixed");
+    revealSound(q, box);
+    finish(ok, q.options[k], q.options[q.answer], q.no && q.no[k]);
+  });
+};
+
+/* ---------- Сцена + вибрати речення, що її описує ---------- */
+QTYPES.scenesay = (q, box, finish, { esc }) => {
+  box.innerHTML = `<p class="q">${esc(q.q)}</p><div class="stage">${sceneHtml(q.scene)}</div>
+    <div class="opts">${q.options.map((o, k) => `<button class="opt" data-k="${k}">${esc(o)}</button>`).join("")}</div>${hiddenSound()}`;
+  let done = false;
+  box.querySelectorAll(".opt").forEach(bt => bt.onclick = () => {
+    if (done) return; done = true;
+    const k = +bt.dataset.k, ok = k === q.answer;
+    box.querySelectorAll(".opt").forEach(x => { x.disabled = true; if (+x.dataset.k === q.answer) x.classList.add("ok"); });
+    if (!ok) bt.classList.add("bad");
+    revealSound(q, box);
+    finish(ok, q.options[k], q.options[q.answer], q.no && q.no[k]);
+  });
 };
 
 /* ---------- Конфетті ---------- */

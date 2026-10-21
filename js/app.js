@@ -19,7 +19,7 @@ function pickVersion(l) {
 }
 // Перемішує варіанти відповіді (mc, pic) разом із поясненнями
 function shuffleOptions(q) {
-  if (q.type !== "mc" && q.type !== "pic" && q.type !== "listen") return q;
+  if (!["mc", "pic", "listen", "hearpic", "scenegap", "scenesay"].includes(q.type)) return q;
   const idx = shuffle(q.options.map((_, k) => k));
   return { ...q, options: idx.map(k => q.options[k]), answer: idx.indexOf(q.answer), no: Array.isArray(q.no) ? idx.map(k => q.no[k]) : q.no };
 }

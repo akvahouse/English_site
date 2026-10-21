@@ -92,6 +92,12 @@ const TICKER_ITEMS = [
   ["do homework", "робити домашку — do, не make", "📚"],
   ["make a mistake", "робити помилку — make", "✏️"],
   ["a better idea", "не «more good idea»", "🌟"],
+  ["afraid of", "боятися…", "😨"],
+  ["proud of", "пишатися…", "🏆"],
+  ["worried about", "хвилюватися про…", "😟"],
+  ["hard for me", "складно для мене", "🪜"],
+  ["in charge of", "керувати…", "🧑‍💼"],
+  ["interested in", "цікавитися…", "🤔"],
   ["a habit / routine", "те, що робиш «на автопілоті» щодня", "⏰"]
 ];
 

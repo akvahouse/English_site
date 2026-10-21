@@ -15,3 +15,11 @@ const D = (say, answer, why, q = "Послухайте й впишіть реч�
 // R — послухати питання й обрати правильну коротку відповідь (say — питання, options — відповіді).
 const R = (say, options, answer, why, ...wr) => ({ type: "listen", mode: "reply", q: "Послухайте питання й оберіть правильну коротку відповідь:", say, options, answer, why,
   no: options.map((_, i) => i === answer ? null : (wr.shift() || "Ця відповідь не відповідає допоміжному слову в питанні.")) });
+// Візуальні вправи з анімованими сценами (емодзі) і озвучкою:
+// HP — почути речення й обрати картинку; SG — сцена + речення з пропуском; VS — сцена + обрати речення, що її описує.
+const HP = (say, options, answer, why, ...wr) => ({ type: "hearpic", q: "Послухайте речення й оберіть картинку, яка йому відповідає:", say, options: options.map(([e, t]) => ({ e, t })), answer, why,
+  no: options.map((_, i) => i === answer ? null : (wr.shift() || "Ця картинка не відповідає почутому реченню.")) });
+const SG = (scene, sentence, options, answer, why, ...wr) => ({ type: "scenegap", q: "Подивіться на сцену й оберіть слово для пропуску:", scene, sentence, options, answer, say: sentence.replace("___", options[answer]), why,
+  no: options.map((_, i) => i === answer ? null : (wr.shift() || "Це слово не підходить до пропуску.")) });
+const VS = (scene, options, answer, why, ...wr) => ({ type: "scenesay", q: "Яке речення описує цю сцену?", scene, options, answer, say: options[answer], why,
+  no: options.map((_, i) => i === answer ? null : (wr.shift() || "Це речення містить помилку.")) });

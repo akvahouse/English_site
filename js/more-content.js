@@ -66,6 +66,17 @@ const CARDS = {
     ["🧮", "much / many", "much — незлічуване, many — злічуване", "much electricity, many people"],
     ["🛠️", "do / make", "do homework, make a mistake", "I do homework. I make mistakes."]
   ],
+  visual: [
+    ["😩", "tired of", "втомлений від", "I'm tired of emails."],
+    ["😨", "afraid of", "боятися (чогось)", "She is afraid of dogs."],
+    ["🎯", "good at", "добре вміти", "He is good at drawing."],
+    ["🏆", "proud of", "пишатися", "I'm proud of my team."],
+    ["🤔", "interested in", "цікавитися", "We are interested in AI art."],
+    ["😟", "worried about", "хвилюватися про", "I'm worried about the exam."],
+    ["🛡️", "responsible for", "відповідальний за", "Max is responsible for the server."],
+    ["🧑‍💼", "in charge of", "керувати, відповідати за", "Anna is in charge of the budget."],
+    ["🪜", "hard for me", "складно для мене", "It is hard for me."]
+  ],
   negatives: [
     ["⚖️", "work-life balance", "баланс роботи й особистого життя", "He needs a better work-life balance."],
     ["💬", "respond to emails", "відповідати на листи", "She doesn't like to respond to emails."],
