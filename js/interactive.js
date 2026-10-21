@@ -120,6 +120,65 @@ QTYPES.gapbank = (q, box, finish, { esc, shuffle, norm }) => {
   draw();
 };
 
+/* ---------- Звук: синтез мовлення браузера (без аудіофайлів) ---------- */
+const TTS = (() => {
+  const ok = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+  let voice = null;
+  const pick = () => {
+    const vs = speechSynthesis.getVoices();
+    voice = vs.find(v => /^en[-_]US/i.test(v.lang) && /natural|google|aria|jenny|samantha|zira/i.test(v.name)) || vs.find(v => /^en[-_]US/i.test(v.lang)) || vs.find(v => /^en/i.test(v.lang)) || null;
+  };
+  if (ok) { pick(); speechSynthesis.onvoiceschanged = pick; }
+  const speak = (text, rate = 1) => {
+    if (!ok) return false;
+    try { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); u.lang = "en-US"; if (voice) u.voice = voice; u.rate = rate; speechSynthesis.speak(u); return true; }
+    catch { return false; }
+  };
+  return { ok, speak };
+})();
+const soundBar = (q, box) => {
+  const warn = box.querySelector(".tts-warn");
+  const play = rate => { if (!TTS.speak(q.say, rate)) warn.hidden = false; };
+  box.querySelector(".snd-fast").onclick = () => play(1);
+  box.querySelector(".snd-slow").onclick = () => play(.6);
+  if (!TTS.ok) warn.hidden = false; else setTimeout(() => play(1), 300);
+  return warn;
+};
+const soundHtml = () => `<div class="listen-bar"><button type="button" class="btn snd snd-fast">🔊 Слухати</button><button type="button" class="btn ghost snd snd-slow">🐢 Повільно</button></div>
+  <p class="hint tts-warn" hidden>Браузер не відтворює звук. Перевірте гучність або відкрийте сайт у Chrome/Edge — а поки що можна розкрити текст нижче.</p>`;
+
+/* ---------- Послухати й обрати написане речення ---------- */
+QTYPES.listen = (q, box, finish, { esc }) => {
+  box.innerHTML = `<p class="q">${esc(q.q)}</p>${soundHtml()}<div class="opts">${q.options.map((o, k) => `<button class="opt" data-k="${k}">${esc(o)}</button>`).join("")}</div>`;
+  soundBar(q, box);
+  let done = false;
+  box.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+    if (done) return; done = true;
+    const k = +b.dataset.k, ok = k === q.answer;
+    box.querySelectorAll(".opt").forEach(x => { x.disabled = true; if (+x.dataset.k === q.answer) x.classList.add("ok"); });
+    if (!ok) b.classList.add("bad");
+    finish(ok, q.options[k], q.options[q.answer], q.no && q.no[k]);
+  });
+};
+
+/* ---------- Диктант: вписати почуте ---------- */
+QTYPES.dictate = (q, box, finish, { esc, norm }) => {
+  box.innerHTML = `<p class="q">${esc(q.q)}</p>${soundHtml()}<input aria-label="Ваша відповідь" class="fill" id="inp" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Впишіть речення…">
+    <div class="actions"><button class="btn" id="chk">Перевірити</button></div>`;
+  soundBar(q, box);
+  const inp = box.querySelector("#inp"), chk = box.querySelector("#chk");
+  const strip = s => norm(s).replace(/[.,!?;:]/g, "").replace(/s+/g, " ").trim();
+  let done = false;
+  const check = () => {
+    if (done || !inp.value.trim()) return; done = true;
+    const ok = q.answer.some(a => strip(a) === strip(inp.value));
+    inp.classList.add(ok ? "ok" : "bad"); inp.disabled = true; chk.remove();
+    finish(ok, inp.value, q.answer[0], "");
+  };
+  chk.onclick = check;
+  inp.onkeydown = e => { if (e.key === "Enter") check(); };
+};
+
 /* ---------- Конфетті ---------- */
 function confetti() {
   if (reduceMotion()) return;

@@ -83,6 +83,15 @@ const TICKER_ITEMS = [
   ["self-employed", "працює на себе", "💼"],
   ["co-founder", "співзасновник", "🏢"],
   ["literature awards", "літературні премії", "🏅"],
+  ["tired of (not tired in)", "прийменник of", "😩"],
+  ["responsible for", "відповідальний за", "🛡️"],
+  ["good at", "гарний у…", "🎯"],
+  ["I am busy", "не «I busy» — потрібне am", "🧩"],
+  ["Does he work?", "після does — без -s", "❓"],
+  ["What does it mean?", "не «What means it?»", "💡"],
+  ["do homework", "робити домашку — do, не make", "📚"],
+  ["make a mistake", "робити помилку — make", "✏️"],
+  ["a better idea", "не «more good idea»", "🌟"],
   ["a habit / routine", "те, що робиш «на автопілоті» щодня", "⏰"]
 ];
 

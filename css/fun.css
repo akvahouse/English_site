@@ -180,3 +180,16 @@ a.card:hover .card-art .art{transform:scale(1.06) rotate(-1deg)}
 @media (prefers-color-scheme:dark){
 .card:nth-child(9) .num{background:#10303a;color:#6ccde6}
 }
+
+/* ---------- Звукові завдання ---------- */
+.listen-bar{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 16px}
+.snd{display:inline-flex;align-items:center;gap:8px;font-size:16px}
+.tts-warn{margin:0 0 12px}
+
+/* ---------- 10-та картка ---------- */
+.card:nth-child(10) .num{background:#fde7ee;color:#b0214e}
+@media (prefers-color-scheme:dark){
+.card:nth-child(10) .num{background:#3a1522;color:#f58aa8}
+}
+.mtable{width:100%;border-collapse:collapse;margin:8px 0 14px}
+.mtable th,.mtable td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}

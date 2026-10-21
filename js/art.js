@@ -84,5 +84,12 @@ const ART = (() => {
     <text x="200" y="198" text-anchor="middle" class="s-text s">Why · What exactly · How often · Which · How many</text>
     <g class="float d2"><text x="48" y="150" font-size="34">🥗</text></g><g class="float d3"><text x="116" y="168" font-size="32">🤔</text></g>`);
 
-  return { trial, tobe1, tobe2, presimple, chunks, beordo, negatives, questions, questions2 };
+  const mistakes = wrap("Мої помилки", `
+    <g class="pulse d1"><rect x="40" y="36" width="320" height="46" rx="16" class="s-c4"/><text x="200" y="66" text-anchor="middle" class="s-text w" font-size="18">I responsible for effects</text></g>
+    <g class="float d2"><text x="200" y="112" text-anchor="middle" font-size="26">⬇️</text></g>
+    <g class="pulse d2"><rect x="40" y="124" width="320" height="46" rx="16" class="s-c3"/><text x="200" y="154" text-anchor="middle" class="s-text w" font-size="18">I am responsible for effects</text></g>
+    <text x="200" y="198" text-anchor="middle" class="s-text s">be + прикметник · do + дієслово · the right word</text>
+    <g class="float"><text x="28" y="62" font-size="26">🔍</text></g><g class="float d3"><text x="344" y="196" font-size="26">🔊</text></g>`);
+
+  return { trial, tobe1, tobe2, presimple, chunks, beordo, negatives, questions, questions2, mistakes };
 })();

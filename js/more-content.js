@@ -55,6 +55,17 @@ const CARDS = {
     ["🏢", "co-founder", "співзасновник", "Sergey Brin is a co-founder of Google."],
     ["🏅", "literature awards", "літературні премії", "Stephen King owns more than 110 literature awards."]
   ],
+  mistakes: [
+    ["🅰️", "Does he work?", "після does дієслово без -s", "Does he work late?"],
+    ["🔁", "Do you…? — Yes, I do.", "перше слово питання = останнє слово відповіді", "Are you busy? — Yes, I am."],
+    ["😩", "tired of", "втомлений від (не tired in)", "I'm tired of emails."],
+    ["🛡️", "responsible for", "відповідальний за (не of)", "She is responsible for hiring."],
+    ["🎯", "good at", "гарний у (чомусь)", "He is good at drawing."],
+    ["🧩", "I am busy", "прикметнику потрібне be", "I am busy this week."],
+    ["📖", "a problem", "перед злічуваним однини потрібен a", "I have a problem with that."],
+    ["🧮", "much / many", "much — незлічуване, many — злічуване", "much electricity, many people"],
+    ["🛠️", "do / make", "do homework, make a mistake", "I do homework. I make mistakes."]
+  ],
   negatives: [
     ["⚖️", "work-life balance", "баланс роботи й особистого життя", "He needs a better work-life balance."],
     ["💬", "respond to emails", "відповідати на листи", "She doesn't like to respond to emails."],

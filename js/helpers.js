@@ -8,3 +8,10 @@ const O = (answer, why) => ({ type: "order", words: answer.split(" "), answer, w
 const MA = (q, pairs, why) => ({ type: "match", q, pairs: pairs.map(([e, l, r]) => ({ e, l, r })), why });
 const SO = (q, buckets, items, why) => ({ type: "sort", q, buckets, items: items.map(([t, b]) => ({ t, b })), why });
 const G = (q, bank, sentences, answers, why) => ({ type: "gapbank", q, bank, sentences, answers, why, no: "" });
+// Звукові завдання: L — послухати й обрати написане речення, D — диктант (вписати почуте).
+const L = (say, options, answer, why, ...wr) => ({ type: "listen", q: "Послухайте речення й оберіть те, що ви почули:", say, options, answer, why,
+  no: options.map((_, i) => i === answer ? null : (wr.shift() || "Це речення звучить інакше: прослухайте ще раз.")) });
+const D = (say, answer, why, q = "Послухайте й впишіть речення, яке ви чуєте:") => ({ type: "dictate", q, say, answer: [].concat(answer), why, no: "" });
+// R — послухати питання й обрати правильну коротку відповідь (say — питання, options — відповіді).
+const R = (say, options, answer, why, ...wr) => ({ type: "listen", mode: "reply", q: "Послухайте питання й оберіть правильну коротку відповідь:", say, options, answer, why,
+  no: options.map((_, i) => i === answer ? null : (wr.shift() || "Ця відповідь не відповідає допоміжному слову в питанні.")) });
