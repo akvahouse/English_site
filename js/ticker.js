@@ -74,6 +74,15 @@ const TICKER_ITEMS = [
   ["overpopulation", "перенаселення", "🌍"],
   ["climate change", "зміна клімату", "🌡️"],
   ["give money away", "роздавати гроші", "🎁"],
+  ["follow-up question", "уточнювальне питання, що продовжує розмову", "🔍"],
+  ["What about you?", "а ти? — швидке питання у відповідь", "🙋"],
+  ["What exactly…?", "що саме…?", "🎯"],
+  ["How many hours a week…?", "скільки годин на тиждень…?", "🔢"],
+  ["Which ice-cream do you like?", "Which + іменник: вибір з відомого набору", "🍦"],
+  ["What time is it?", "котра година?", "⏰"],
+  ["self-employed", "працює на себе", "💼"],
+  ["co-founder", "співзасновник", "🏢"],
+  ["literature awards", "літературні премії", "🏅"],
   ["a habit / routine", "те, що робиш «на автопілоті» щодня", "⏰"]
 ];
 

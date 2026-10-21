@@ -1408,6 +1408,284 @@ questions: [
       "У пекарні купують хліб і тістечка, а не беруть книжки.",
       "В аеропорту літають і реєструють багаж, книжки там не позичають.")
   ]
+],
+
+/* ====================== QUESTIONS IN PRESENT SIMPLE, PART 2 ====================== */
+questions2: [
+  [ // версія 2
+    M("Яке питання правильне?", ["Does your trainer start the class at seven?", "Is your trainer start the class at seven?", "Do your trainer starts the class at seven?"], 0,
+      "Start — звичайне дієслово, trainer — він, тому Does + підмет + базова форма: Does your trainer start the class at seven?",
+      "Is — форма be; поєднувати її зі звичайним дієсловом start не можна.",
+      "Trainer — однина, тому does, а не do; після нього дієслово без -s: start."),
+  
+    M("Оберіть правильне питання:", ["Are your neighbours noisy at night?", "Do your neighbours noisy at night?", "Does your neighbours are noisy at night?"], 0,
+      "Noisy — прикметник, тому питання з be: Are + your neighbours (вони) + noisy?",
+      "Do ставимо перед звичайним дієсловом, а noisy — прикметник, тому потрібне are.",
+      "У питанні лише одне допоміжне слово: does і are разом не вживаємо; neighbours — множина, тому are."),
+  
+    M("Яке питання про автобус правильне?", ["Where does the bus to the airport stop?", "Where the bus to the airport stops?", "Where do the bus to the airport stop?"], 0,
+      "Bus — однина (it), тому does: Where + does + the bus to the airport + stop? Дієслово без -s.",
+      "Допоміжне слово does пропущене: у питанні воно стоїть перед підметом.",
+      "Bus — однина, тому does, а не do."),
+  
+    F("What ___ Katya afraid of?", "is",
+      "Afraid of — chunk з be; Katya — одна людина (she), тому is: What is Katya afraid of?"),
+  
+    F("How often ___ your dog need a walk?", "does",
+      "Dog — однина (it), а need — звичайне дієслово, тому допоміжне слово does: How often does your dog need a walk?"),
+  
+    F("Why ___ the students like the new schedule? (негативне питання: «чому їм не подобається»)", "don't",
+      "У негативному питанні don't стоїть перед підметом: Why don't the students like ...? Students — множина, тому don't, а не doesn't."),
+  
+    O("How many classes do you have on Friday?",
+      "Порядок у питанні: How many + іменник + допоміжне слово (do) + підмет + дієслово в базовій формі."),
+  
+    O("What time does the pharmacy open?",
+      "Питання про час: What time + does + підмет + дієслово в базовій формі (open, без -s)."),
+  
+    SO("Правильне питання чи помилка?", ["Correct", "Mistake"], [
+        ["Does your cat sleep all day?", 0],
+        ["Does your cat sleeps all day?", 1],
+        ["Is your cat afraid of dogs?", 0],
+        ["Does your cat afraid of dogs?", 1],
+        ["Why doesn't he answer calls?", 0],
+        ["Why he doesn't answer calls?", 1]
+      ],
+      "Після does дієслово лишається в базовій формі (sleep, не sleeps). Afraid of — chunk з be, тому Is, а не Does. У питанні допоміжне слово стоїть перед підметом: Why doesn't he ...?"),
+  
+    G("Яке слово потрібне в кожному питанні?", ["do", "does", "is", "are", "am"], [
+      "___ your sister good at maths?",
+      "___ I late for class again?",
+      "___ the kids like swimming?",
+      "___ your friend work at a hospital?",
+      "___ the exams easy this year?"
+    ], ["is", "am", "do", "does", "are"],
+      "З прикметниками be: is — з sister, am — з I, are — з the exams. Зі звичайними дієсловами do/does: do — the kids (вони), does — your friend (він)."),
+  
+    MA("З'єднайте питання з відповіддю:", [
+      ["🕗", "What time does the film start?", "At eight."],
+      ["📍", "Where does your coach live?", "Near the stadium."],
+      ["🧑‍⚕️", "Who is your doctor?", "Dr. Koval."],
+      ["💡", "Why does she study German?", "Because she wants to live in Vienna."],
+      ["🔢", "How often do you swim?", "Twice a week."]
+    ], "What time — час, Where — місце, Who — людина, Why — причина (because), How often — частота (twice a week)."),
+  
+    P("How often do you walk the dog? — «Every morning and every evening.» Яка картинка відповідає цій відповіді?", [
+      ["🐕🌅🌙", "Двічі на день"],
+      ["🐕💤", "Ніколи не гуляє з собакою"],
+      ["🐕🎾📅", "Раз на місяць"]
+    ], 0,
+      "Every morning and every evening — вранці й увечері, тобто двічі на день.",
+      "Ніколи — це never, а в відповіді названо конкретний час щодня.",
+      "Раз на місяць — once a month, а не every morning and every evening.")
+  ],
+  [ // версія 3
+    M("Друг каже: «I rarely watch films.» Яке follow-up питання правильне?", ["How often do you go to the cinema?", "How often you go to the cinema?", "How often are you go to the cinema?"], 0,
+      "How often + do + you + дієслово в базовій формі: How often do you go to the cinema? Допоміжне слово стоїть перед підметом.",
+      "Допоміжне слово do пропущене: порядок має бути How often do you go ...?",
+      "Are не поєднується зі звичайним дієсловом go; потрібне do."),
+  
+    M("«My brother is afraid of flying.» — Яке follow-up питання правильне?", ["Why is he afraid of flying?", "Why does he afraid of flying?", "Why he is afraid of flying?"], 0,
+      "Afraid of — chunk з be, тому Why + is + he + afraid of flying?",
+      "Does ставимо зі звичайним дієсловом, а afraid — прикметник, тому потрібне is.",
+      "Допоміжне слово is має стояти перед підметом: Why is he ...?, а не Why he is ...?"),
+  
+    M("«I don't like pop music.» — Яке follow-up питання правильне?", ["What music do you prefer?", "What music you prefer?", "What music does you prefer?"], 0,
+      "What music — питання про предмет: What music + do + you + prefer? Допоміжне слово do з you.",
+      "Допоміжне слово do пропущене: у питанні воно стоїть перед підметом you.",
+      "Does вживаємо з he/she/it, а з you — do."),
+  
+    M("Яке follow-up питання відповідають словами «Yes» або «No»?", ["Do you play any instruments?", "What instrument do you play?", "Why do you play the piano?"], 0,
+      "Питання з Do/Does/Is/Are на початку — «так / ні». Do you play any instruments? — Yes, I do. / No, I don't.",
+      "What instrument ...? запитує про конкретну річ, відповідь — назва інструмента, а не Yes/No.",
+      "Why ...? запитує про причину, відповідь — з because."),
+  
+    F("«My parents live in a village.» — ___ they like it there?", "Do",
+      "Like — звичайне дієслово, а parents — вони, тому Do: Do they like it there?"),
+  
+    F("«She is tired of her long commute.» — How long ___ it take her to get to work?", "does",
+      "Take — звичайне дієслово, а it — 3-тя особа, тому does: How long does it take her to get to work?"),
+  
+    O("What exactly do you hate about Mondays?",
+      "Порядок у питанні: What exactly + допоміжне слово (do) + підмет + дієслово в базовій формі (hate) + решта."),
+  
+    O("Which city do you plan to visit?",
+      "Which + іменник + допоміжне слово (do) + підмет + plan to + дієслово: Which city do you plan to visit?"),
+  
+    G("Оберіть питальне слово для follow-up питання:", ["Why", "What", "How often", "Who", "Where"], [
+      "___ do you travel with? — With my sister.",
+      "___ do you stay when you travel? — In small hotels.",
+      "___ do you go abroad? — Twice a year.",
+      "___ do you like about travelling? — New food.",
+      "___ are you saving money for a trip? — Because I want to see Japan."
+    ], ["Who", "Where", "How often", "What", "Why"],
+      "Who — з ким (людина), Where — де (місце), How often — як часто (twice a year), What — що саме (new food), Why — чому (because)."),
+  
+    SO("Розкладіть follow-up питання за типом:", ["Wh-питання", "Питання «так / ні»"], [
+        ["What exactly do you study?", 0],
+        ["Do you like your course?", 1],
+        ["How many students are in your group?", 0],
+        ["Is your teacher strict?", 1],
+        ["Which subject is the hardest?", 0],
+        ["Are you good at maths?", 1]
+      ],
+      "Wh-питання починаються з питального слова (What, How many, Which) — відповідь розгорнута. Питання з Do/Is/Are — «так / ні»."),
+  
+    MA("Поєднайте твердження з follow-up питанням:", [
+      ["🎻", "I play the violin.", "How long do you practise every day?"],
+      ["🌍", "We plan to travel in July.", "Which country do you plan to visit?"],
+      ["😴", "My neighbour never sleeps at night.", "Why doesn't he sleep at night?"],
+      ["🍳", "My mum is good at cooking.", "What dishes does she cook?"],
+      ["📚", "I am interested in history.", "What period are you interested in?"]
+    ], "Follow-up питання продовжує тему: про скрипку — скільки практикуєшся, про подорож — яка країна, про сон — чому не спить, про кулінарію — які страви, про історію — який період."),
+  
+    P("Which ice-cream do you like? — «Chocolate, please.» Яка картинка відповідає цій відповіді?", [
+      ["🍫🍦", "Шоколадне морозиво"],
+      ["🍓🍦", "Полуничне морозиво"],
+      ["🍋🍦", "Лимонне морозиво"]
+    ], 0,
+      "Chocolate — шоколад, тому відповідь пасує до шоколадного морозива.",
+      "Полуниця — strawberry, а не chocolate.",
+      "Лимон — lemon, а не chocolate.")
+  ],
+  [ // версія 4
+    M("A: ___? B: Yes, I am. I'm afraid of spiders.", ["Are you afraid of spiders?", "Do you afraid of spiders?", "Is you afraid of spiders?"], 0,
+      "Відповідь Yes, I am показує, що питання було з be: Are you afraid of spiders? Afraid of — chunk з be.",
+      "Do ставимо перед звичайним дієсловом, а afraid — прикметник; до того ж відповідь була б Yes, I do.",
+      "З you вживаємо are, а не is: Are you ...?"),
+  
+    M("A: ___? B: No, she doesn't. She never drinks coffee.", ["Does she drink coffee?", "Is she drink coffee?", "Does she drinks coffee?"], 0,
+      "Відповідь No, she doesn't повторює допоміжне слово питання: Does she drink coffee?",
+      "Is не поєднується зі звичайним дієсловом drink; до того ж відповідь була б No, she isn't.",
+      "Після does дієслово має форму без -s: drink, а не drinks."),
+  
+    M("A: ___? B: At nine o'clock.", ["What time does the lesson start?", "What time is the lesson start?", "What time the lesson starts?"], 0,
+      "At nine o'clock — це час, тому питання What time ...? Start — звичайне дієслово, тому does + базова форма.",
+      "Is не поєднується зі звичайним дієсловом start; потрібне does.",
+      "Допоміжне слово does пропущене: у питанні воно стоїть перед підметом (the lesson)."),
+  
+    M("A: ___? B: Because I'm tired of the traffic.", ["Why are you tired?", "Where are you tired?", "How often are you tired?"], 0,
+      "Відповідь з Because називає причину, а причину запитуємо словом Why: Why are you tired?",
+      "Where запитує про місце (in the office), а Because називає причину.",
+      "How often запитує про частоту (every day), а Because називає причину."),
+  
+    F("A: ___ does your brother work? B: In a bank.", "Where",
+      "In a bank — місце роботи, а про місце запитуємо словом Where: Where does your brother work?"),
+  
+    F("A: How ___ people work in your office? B: About fifty.", "many",
+      "About fifty — кількість людей, тому How many + іменник у множині: How many people work in your office?"),
+  
+    F("A: ___ you good at tennis? B: Yes, I am.", "Are",
+      "Good at — chunk з be; відповідь Yes, I am показує, що питання було з Are: Are you good at tennis?"),
+  
+    O("Which languages does she speak?",
+      "Which + іменник + does + підмет + базова форма: Which languages does she speak? Після does без -s: speak."),
+  
+    MA("Дані про двох колег. З'єднайте питання з відповіддю:", [
+      ["🏙️", "Where does Dan live?", "In Lviv."],
+      ["🎨", "What is Eva good at?", "Drawing."],
+      ["🎹", "What does Dan do after work?", "He plays the piano."],
+      ["😩", "What is Eva tired of?", "Answering messages."],
+      ["📚", "What does Dan want to learn?", "To speak Spanish."]
+    ], "Live — місце (In Lviv); good at і tired of — chunks з be (Drawing, Answering messages); do after work → що робить; want to learn → що хоче вивчити."),
+  
+    SO("Правильне питання чи помилка? (інтерв'ю з музикантом)", ["Correct", "Mistake"], [
+        ["Where do you get your ideas?", 0],
+        ["Where you get your ideas?", 1],
+        ["How many songs does she write a year?", 0],
+        ["How many songs she writes a year?", 1],
+        ["Which song is your favourite?", 0],
+        ["Which your song is your favourite?", 1]
+      ],
+      "У питанні допоміжне слово стоїть перед підметом: Where do you ...?, How many songs does she ...? Після Which потрібен іменник без your: Which song is your favourite?"),
+  
+    G("Яке слово потрібне в питанні до музиканта?", ["do", "does", "is", "are", "can"], [
+      "When ___ we expect your new album?",
+      "Where ___ you get your ideas?",
+      "What ___ your favourite song?",
+      "How often ___ the band practise?",
+      "Why ___ you proud of the last album?"
+    ], ["can", "do", "is", "does", "are"],
+      "Can — коли питаємо про можливість (When can we expect ...?). Do — з you і звичайним дієсловом; is — з be (your favourite song); does — the band (однина) + практикує; are — з you і прикметником proud."),
+  
+    P("Where do you spend the weekend? — «At the beach.» Яка картинка відповідає цій відповіді?", [
+      ["🏖️🌊", "На пляжі"],
+      ["🏢💼", "В офісі"],
+      ["🏔️🥾", "У горах"]
+    ], 0,
+      "Beach — пляж, тому відповідь на Where do you spend the weekend? пасує до картинки з пляжем.",
+      "Офіс — office, а не beach.",
+      "Гори — mountains, а не beach.")
+  ],
+  [ // версія 5
+    M("Оберіть правильне питання про Sofia:", ["Is Sofia interested in photography?", "Does Sofia interested in photography?", "Does Sofia is interested in photography?"], 0,
+      "Interested in — chunk з be, Sofia — вона, тому Is Sofia interested in ...?",
+      "Does ставимо перед звичайним дієсловом; interested — прикметник, тому потрібне is.",
+      "У питанні лише одне допоміжне слово: does і is разом не вживаємо."),
+  
+    M("Does your teacher give a lot of homework? Яка коротка відповідь «ні» правильна?", ["No, she doesn't.", "No, she isn't.", "No, she don't."], 0,
+      "Коротка відповідь повторює допоміжне слово питання: Does ...? — No, she doesn't.",
+      "Isn't — відповідь на питання з be (Is she ...?), а питання почалося з Does.",
+      "З she потрібне doesn't, а не don't: don't вживаємо з I, you, we, they."),
+  
+    M("___ do you meet your photography club? — On Saturdays.", ["When", "Where", "Why"], 0,
+      "On Saturdays — час, а про час запитуємо словом When: When do you meet your photography club?",
+      "Where запитує про місце (in the park), а On Saturdays — не місце.",
+      "Why запитує про причину і потребує відповіді з because."),
+  
+    M("___ is your favourite teacher? — Mr Bondar.", ["Who", "What", "Where"], 0,
+      "Mr Bondar — це людина, а про людину запитуємо словом Who: Who is your favourite teacher?",
+      "What запитує про предмет чи дію, а відповідь — ім'я людини.",
+      "Where запитує про місце, а Mr Bondar — не місце."),
+  
+    F("Are your parents proud of you? — Yes, they ___.", "are",
+      "Коротка відповідь повторює допоміжне слово питання: питання з Are, тому Yes, they are."),
+  
+    F("What ___ the café serve for breakfast?", "does",
+      "Café — однина (it), а serve — звичайне дієслово, тому допоміжне слово does: What does the café serve for breakfast?"),
+  
+    O("How often does he visit his grandparents?",
+      "Порядок у питанні: How often + does + підмет + дієслово в базовій формі (visit, без -s) + решта."),
+  
+    O("Is your sister afraid of dogs?",
+      "Питання з be: Is + підмет + chunk (afraid of dogs). Does тут не потрібне."),
+  
+    SO("Яке допоміжне слово потрібне в цих питаннях?", ["Питання з be (is / are)", "Питання з do / does"], [
+        ["Is he good at chess?", 0],
+        ["Are they tired of homework?", 0],
+        ["Is your brother proud of his team?", 0],
+        ["Does he play chess every day?", 1],
+        ["Do they walk to school?", 1],
+        ["Does your brother like football?", 1]
+      ],
+      "Be потрібне з прикметниками й chunks (good at, tired of, proud of). Do/does — зі звичайними дієсловами (play, walk, like)."),
+  
+    MA("З'єднайте питання з відповіддю:", [
+      ["⚽", "Where does your brother play football?", "In the park."],
+      ["🕘", "When does the film start?", "At nine."],
+      ["👩‍🏫", "Who is your teacher?", "Ms Hrytsenko."],
+      ["🍕", "What does she eat for lunch?", "Pizza."],
+      ["🚲", "How often do you cycle?", "Every weekend."]
+    ], "Where — місце (in the park), When — час (at nine), Who — людина, What — предмет (pizza), How often — частота (every weekend)."),
+  
+    G("Оберіть слово Do / Does / Is / Are / Am:", ["Do", "Does", "Is", "Are", "Am"], [
+      "___ your friends like loud music?",
+      "___ the café open on Sunday?",
+      "___ Ben practise the piano every day?",
+      "___ you ready for the test?",
+      "___ I late?"
+    ], ["Do", "Is", "Does", "Are", "Am"],
+      "Зі звичайними дієсловами: Do + your friends (вони), Does + Ben (він). З прикметниками be: Is + the café (однина), Are + you, Am + I."),
+  
+    P("Where does your sister study? — «At university.» Яка картинка відповідає цій відповіді?", [
+      ["🎓🏛️", "В університеті"],
+      ["🍳🥘", "У кухні"],
+      ["✈️🧳", "В аеропорту"]
+    ], 0,
+      "University — університет, тому відповідь на Where does your sister study? пасує до картинки з випускною шапочкою й будівлею.",
+      "Кухня — kitchen, а не university.",
+      "Аеропорт — airport, а не university.")
+  ]
 ]
 };
 

@@ -76,5 +76,13 @@ const ART = (() => {
     <text x="200" y="206" text-anchor="middle" class="s-text s">What · Where · When · Who · Why · How often</text>
     <g class="float"><text x="40" y="66" font-size="32">❓</text></g><g class="float d2"><text x="184" y="64" font-size="30">🤔</text></g><g class="float d3"><text x="326" y="66" font-size="32">💬</text></g>`);
 
-  return { trial, tobe1, tobe2, presimple, chunks, beordo, negatives, questions };
+  const questions2 = wrap("Follow-up питання", `
+    <g class="float"><rect x="26" y="40" width="172" height="52" rx="20" class="s-card"/><path d="M62 92l-8 18 26-18z" class="s-card"/><text x="112" y="71" text-anchor="middle" class="s-text" font-size="14">I never eat junk food.</text></g>
+    <g class="pulse d1"><rect x="216" y="34" width="150" height="38" rx="16" class="s-c1"/><text x="291" y="59" text-anchor="middle" class="s-text w" font-size="16">Why?</text></g>
+    <g class="pulse d2"><rect x="216" y="82" width="150" height="38" rx="16" class="s-c2"/><text x="291" y="107" text-anchor="middle" class="s-text w" font-size="16">What exactly…?</text></g>
+    <g class="pulse d3"><rect x="216" y="130" width="150" height="38" rx="16" class="s-c3"/><text x="291" y="155" text-anchor="middle" class="s-text w" font-size="16">What about you?</text></g>
+    <text x="200" y="198" text-anchor="middle" class="s-text s">Why · What exactly · How often · Which · How many</text>
+    <g class="float d2"><text x="48" y="150" font-size="34">🥗</text></g><g class="float d3"><text x="116" y="168" font-size="32">🤔</text></g>`);
+
+  return { trial, tobe1, tobe2, presimple, chunks, beordo, negatives, questions, questions2 };
 })();

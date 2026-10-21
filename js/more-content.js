@@ -44,6 +44,17 @@ const CARDS = {
     ["👥", "overpopulation", "перенаселення", "Does saving lives lead to overpopulation?"],
     ["🎁", "give money away", "роздавати гроші", "Why are you giving your money away?"]
   ],
+  questions2: [
+    ["🔍", "follow-up question", "уточнювальне питання, що продовжує розмову", "Why? Are you on a diet?"],
+    ["🙋", "What about you?", "а ти? — швидке питання у відповідь", "I like tea. What about you?"],
+    ["🎯", "What exactly …?", "що саме …?", "What exactly do you hate about Mondays?"],
+    ["🔢", "How many …?", "скільки (з іменником у множині)", "How many hours a week do you work?"],
+    ["🍦", "Which …?", "який / котрий (з певного набору)", "Which ice-cream do you like?"],
+    ["⏰", "What time …?", "о котрій / котра година", "What time is it?"],
+    ["💼", "self-employed", "працює на себе (фрилансер)", "Why are you self-employed?"],
+    ["🏢", "co-founder", "співзасновник", "Sergey Brin is a co-founder of Google."],
+    ["🏅", "literature awards", "літературні премії", "Stephen King owns more than 110 literature awards."]
+  ],
   negatives: [
     ["⚖️", "work-life balance", "баланс роботи й особистого життя", "He needs a better work-life balance."],
     ["💬", "respond to emails", "відповідати на листи", "She doesn't like to respond to emails."],
