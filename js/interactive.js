@@ -136,12 +136,24 @@ const TTS = (() => {
   };
   return { ok, speak };
 })();
+// Озвучка: готові mp3 (ElevenLabs) з assets/audio; якщо файлу немає — голос браузера.
+const audioKey = s => { let h = 0x811c9dc5; for (const b of new TextEncoder().encode(s)) { h ^= b; h = Math.imul(h, 0x01000193) >>> 0; } return h.toString(16).padStart(8, "0"); };
+let curAudio = null;
+const playSound = (text, slow, onFail) => {
+  try { if (curAudio) curAudio.pause(); if (TTS.ok) speechSynthesis.cancel(); } catch {}
+  let fell = false;
+  const fall = () => { if (fell) return; fell = true; if (!TTS.speak(text, slow ? .6 : 1)) onFail(); };
+  const a = curAudio = new Audio("assets/audio/" + audioKey(text) + (slow ? "-slow" : "") + ".mp3");
+  a.onerror = fall;
+  const p = a.play();
+  if (p && p.catch) p.catch(e => { if (!e || e.name !== "NotAllowedError") fall(); });
+};
 const soundBar = (q, box) => {
   const warn = box.querySelector(".tts-warn");
-  const play = rate => { if (!TTS.speak(q.say, rate)) warn.hidden = false; };
-  box.querySelector(".snd-fast").onclick = () => play(1);
-  box.querySelector(".snd-slow").onclick = () => play(.6);
-  if (!TTS.ok) warn.hidden = false; else setTimeout(() => play(1), 300);
+  const play = slow => playSound(q.say, slow, () => { warn.hidden = false; });
+  box.querySelector(".snd-fast").onclick = () => play(false);
+  box.querySelector(".snd-slow").onclick = () => play(true);
+  setTimeout(() => play(false), 300);
   return warn;
 };
 const soundHtml = () => `<div class="listen-bar"><button type="button" class="btn snd snd-fast">🔊 Слухати</button><button type="button" class="btn ghost snd snd-slow">🐢 Повільно</button></div>
