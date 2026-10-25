@@ -66,16 +66,16 @@ const CARDS = {
     ["🧮", "much / many", "much — незлічуване, many — злічуване", "much electricity, many people"],
     ["🛠️", "do / make", "do homework, make a mistake", "I do homework. I make mistakes."]
   ],
-  visual: [
-    ["😩", "tired of", "втомлений від", "I'm tired of emails."],
-    ["😨", "afraid of", "боятися (чогось)", "She is afraid of dogs."],
-    ["🎯", "good at", "добре вміти", "He is good at drawing."],
-    ["🏆", "proud of", "пишатися", "I'm proud of my team."],
-    ["🤔", "interested in", "цікавитися", "We are interested in AI art."],
-    ["😟", "worried about", "хвилюватися про", "I'm worried about the exam."],
-    ["🛡️", "responsible for", "відповідальний за", "Max is responsible for the server."],
-    ["🧑‍💼", "in charge of", "керувати, відповідати за", "Anna is in charge of the budget."],
-    ["🪜", "hard for me", "складно для мене", "It is hard for me."]
+  relative: [
+    ["🧑", "who", "людина (замінює he / she)", "Mario is a character who jumps on enemies."],
+    ["🎮", "which / that", "річ, гра (замінює it)", "Tetris is a game that you can play on any device."],
+    ["📍", "where", "місце (замінює there)", "Silent Hill is a town where strange things happen."],
+    ["🔑", "whose", "чий — після нього іменник", "Pac-Man is a game whose hero eats dots."],
+    ["📅", "when", "час (замінює then)", "1980 is the year when Pac-Man came out."],
+    ["✂️", "non-defining clause", "додаткова інформація в комах: which / who, не that", "Minecraft, which came out in 2011, is a huge hit."],
+    ["🚀", "a huge hit", "дуже успішний", "Pac-Man was a huge hit in 1980."],
+    ["🆕", "a spin-off", "нова гра на основі старої успішної", "Miss Pac-Man is a spin-off."],
+    ["🏅", "to be inspired by", "надихатися чимось", "The hero is inspired by a pizza."]
   ],
   negatives: [
     ["⚖️", "work-life balance", "баланс роботи й особистого життя", "He needs a better work-life balance."],

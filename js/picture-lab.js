@@ -1,5 +1,5 @@
-// Тренажер «Picture & Sound Lab»: квізи з анімованими картинками та озвучкою на типові помилки.
-// Тест (версія 1) вставляється між маркерами; версії 2–5 лежать у variants.js (EXTRA.visual).
+// Picture & Sound Lab: вправи з анімованими сценами й озвучкою вбудовані в тест КОЖНОГО уроку (окремого уроку немає).
+// Пул питань: VISUAL_V1 (версія 1) і EXTRA.visual (версії 2–5, variants.js). Нижче розподіл за темами уроків: "версія.номер".
 const VISUAL_V1 = /*V1_START*/[
   HP("He is afraid of spiders.",
     [["😍 🕷️", "обожнює павуків"], ["😴 🛏️", "міцно спить"], ["😨 🕷️", "павук поряд"]],
@@ -79,47 +79,34 @@ const VISUAL_V1 = /*V1_START*/[
     "Is не вживається разом із дієсловом дії feel: потрібне does, а не is, і feel без -s.")
 ]/*V1_END*/;
 
-// статична анімована «сцена» з емодзі для конспекту
-const vscene = s => `<span class="scene">${s.split(" ").map((e, i) => `<span class="sc-e a-${["bounce", "float", "wiggle", "pulse", "sway"][i % 5]}" style="--d:${(i * .37).toFixed(2)}s">${e}</span>`).join("")}</span>`;
-const vrows = rows => `<table class="mtable vtable"><tr><th></th><th>Вираз</th><th>Приклад</th></tr>${rows.map(([sc, chunk, ex]) => `<tr><td class="vsc">${vscene(sc)}</td><td><b>${chunk}</b></td><td>${ex}</td></tr>`).join("")}</table>`;
+const LAB_MAP = {
+  trial: ["3.7", "3.10", "2.11", "4.3", "0.6"],
+  tobe1: ["0.0", "0.2", "0.4", "1.0", "1.2", "1.5"],
+  tobe2: ["2.0", "2.3", "3.0", "3.4", "4.1", "4.8"],
+  presimple: ["0.1", "1.8", "3.8", "3.11", "4.10", "1.11", "2.1", "2.9", "3.5", "4.11"],
+  beordo: ["0.7", "1.4", "2.5", "3.1", "4.5", "0.8"],
+  chunks: ["0.9", "1.6", "3.9", "4.0", "4.4", "2.10"],
+  negatives: ["0.5", "1.1", "1.3", "2.2", "3.3", "4.2", "2.7", "4.7"],
+  questions: ["0.3", "0.11", "2.8", "1.7"],
+  questions2: ["2.4", "3.2", "4.9"],
+  mistakes: ["0.10", "1.9", "1.10", "2.6", "3.6", "4.6"]
+};
+(function () {
+  const pool = [VISUAL_V1, ...EXTRA.visual];
+  LESSONS.forEach(l => {
+    (LAB_MAP[l.id] || []).forEach((key, i) => {
+      const [v, q] = key.split(".").map(Number);
+      l.versions[i % l.versions.length].quiz.push(pool[v][q]);
+    });
+  });
+})();
 
-LESSONS.push({
-  id: "visual",
-  title: "Picture & Sound Lab",
-  short: "Picture lab",
-  subtitle: "Квізи з анімованими картинками та озвучкою",
-  summary: "Слухайте речення й обирайте картинку, дивіться на сцену й обирайте слово чи речення. Усе на ті помилки, які ми знайшли в ваших уроках; правильне речення звучить після кожної відповіді.",
-  sections: [
-    { title: "Як це працює", html: `
-      <p>Це тренажер, де помилки, які повторюються у ваших уроках (прийменники, be, do / does, артиклі, much / many), відпрацьовуються через <b>картинку + звук</b>. Тест має три типи вправ:</p>
-      <ol>
-        <li><b>Почути й обрати картинку</b> — голос читає речення, ви обираєте анімовану сцену, яка йому відповідає.</li>
-        <li><b>Сцена + пропуск</b> — дивитесь на сцену й обираєте слово для пропуску (прийменник, допоміжне слово, much / many, a / an…).</li>
-        <li><b>Сцена + речення</b> — обираєте речення, яке правильно описує сцену. У хибних реченнях ваші типові помилки.</li></ol>
-      <p class="hint">Після кожної відповіді правильне речення звучить ще раз. Повторюйте його вголос — так воно запам'ятовується краще, ніж просто читання. Речення озвучують різні голоси (жіночі й чоловічі, американські й британські), щоб вухо звикало до різної вимови.</p>` },
-    { title: "Шпаргалка: вирази з прийменниками", html: `
-      ${vrows([
-        ["😩 ✉️", "tired of", "I'm tired of emails."],
-        ["😨 🐕", "afraid of", "She is afraid of dogs."],
-        ["🎯 🎨", "good at", "He is good at drawing."],
-        ["🏆 👥", "proud of", "I'm proud of my team."],
-        ["🤔 🖼️", "interested in", "We are interested in AI art."],
-        ["😟 📝", "worried about", "I'm worried about the exam."],
-        ["🛡️ 🖥️", "responsible for", "Max is responsible for the server."],
-        ["🧑‍💼 💰", "in charge of", "Anna is in charge of the budget."]])}
-      <p><b>Прийом:</b> вчіть прийменник разом зі словом, як одну цеглинку: <b>tired of</b>, <b>good at</b>, <b>responsible for</b>. І не забувайте <b>be</b> перед ними: I <b>am</b> tired of…, he <b>is</b> good at…</p>` },
-    { title: "Шпаргалка: ваші найчастіші помилки", html: `
-      <ol>
-        <li><b>do / does + базова форма:</b> Does he <mark>work</mark> late? (не <s>works</s>)</li>
-        <li><b>Коротка відповідь повторює допоміжне слово:</b> Do you…? — Yes, I <mark>do</mark>. Are you…? — Yes, I <mark>am</mark>.</li>
-        <li><b>Be перед прикметником:</b> I <mark>am</mark> busy. (не <s>I busy</s>)</li>
-        <li><b>Артикль:</b> I have <mark>a</mark> problem. Many / much: <mark>many</mark> apples, <mark>much</mark> water.</li>
-        <li><b>Минуле:</b> yesterday, ago → Past Simple: I <mark>studied</mark> it two years ago.</li></ol>` },
-    { title: "Спробуйте голосом", html: `
-      <ol>
-        <li>Подивіться на сцену й скажіть вголос, що в ній відбувається.</li>
-        <li>Слухайте запис і повторюйте за ним: спочатку нормально, потім повільно (кнопка 🐢).</li>
-        <li>Якщо відповіли неправильно — прочитайте пояснення й промовте правильне речення двічі.</li></ol>` }
-  ],
-  quiz: VISUAL_V1
+// Секція «Picture & Sound Lab» у конспекті кожного уроку: анімовані сцени до слів уроку
+const vscene = s => `<span class="scene">${s.split(" ").map((e, i) => `<span class="sc-e a-${["bounce", "float", "wiggle", "pulse", "sway"][i % 5]}" style="--d:${(i * .37).toFixed(2)}s">${e}</span>`).join("")}</span>`;
+LESSONS.forEach(l => {
+  const rows = (CARDS[l.id] || []).slice(0, 6);
+  if (!rows.length) return;
+  const html = `<p>Подивіться на сцену, прочитайте фразу й промовте приклад вголос. У тесті цього уроку є вправи з анімованими картинками й озвучкою: <b>почути речення й обрати картинку</b>, <b>сцена + пропуск</b>, <b>сцена + речення</b>.</p>
+    <table class="mtable vtable"><tr><th></th><th>Вираз</th><th>Приклад</th></tr>${rows.map(([e, term, , ex]) => `<tr><td class="vsc">${vscene(e)}</td><td><b>${term}</b></td><td>${ex}</td></tr>`).join("")}</table>`;
+  l.sections.splice(2, 0, { title: "Picture & Sound Lab", html });
 });

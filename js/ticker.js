@@ -98,6 +98,14 @@ const TICKER_ITEMS = [
   ["hard for me", "складно для мене", "🪜"],
   ["in charge of", "керувати…", "🧑‍💼"],
   ["interested in", "цікавитися…", "🤔"],
+  ["a character who jumps", "who + дієслово: людина без повтору he", "🧑"],
+  ["a game that / which", "that / which — річ, гра", "🎮"],
+  ["a town where…", "where = у цьому місці", "📍"],
+  ["a game whose hero…", "whose + іменник: чий", "🔑"],
+  ["the year when…", "when — час: the year when", "📅"],
+  ["Minecraft, which came out in 2011,", "додаткова інформація в комах: не that", "✂️"],
+  ["a spin-off", "нова гра на основі старої успішної", "🆕"],
+  ["a huge hit", "дуже успішний", "🚀"],
   ["a habit / routine", "те, що робиш «на автопілоті» щодня", "⏰"]
 ];
 

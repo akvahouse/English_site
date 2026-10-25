@@ -91,12 +91,13 @@ const ART = (() => {
     <text x="200" y="198" text-anchor="middle" class="s-text s">be + прикметник · do + дієслово · the right word</text>
     <g class="float"><text x="28" y="62" font-size="26">🔍</text></g><g class="float d3"><text x="344" y="196" font-size="26">🔊</text></g>`);
 
-  const visual = wrap("Картинки й звук", `
-    <g class="pulse d1"><rect x="40" y="40" width="96" height="96" rx="22" class="s-c1"/><text x="88" y="102" text-anchor="middle" font-size="48">😩</text></g>
-    <g class="pulse d2"><rect x="152" y="40" width="96" height="96" rx="22" class="s-c2"/><text x="200" y="102" text-anchor="middle" font-size="48">😨</text></g>
-    <g class="pulse d3"><rect x="264" y="40" width="96" height="96" rx="22" class="s-c3"/><text x="312" y="102" text-anchor="middle" font-size="48">🏆</text></g>
-    <g class="float d2"><text x="190" y="178" text-anchor="middle" font-size="34">🔊</text></g>
-    <text x="200" y="206" text-anchor="middle" class="s-text s">Listen · Look · Choose</text>`);
+  const relative = wrap("Relative Clauses", `
+    <g class="pulse d1"><rect x="24" y="44" width="150" height="40" rx="16" class="s-c1"/><text x="99" y="70" text-anchor="middle" class="s-text w" font-size="15">a character</text></g>
+    <g class="pulse d2"><rect x="226" y="44" width="150" height="40" rx="16" class="s-c3"/><text x="301" y="70" text-anchor="middle" class="s-text w" font-size="15">jumps on enemies</text></g>
+    <g class="float d1"><circle cx="200" cy="64" r="26" class="s-c2"/><text x="200" y="72" text-anchor="middle" class="s-text w" font-size="20">who</text></g>
+    <text x="200" y="124" text-anchor="middle" class="s-text" font-size="15">who · which · that · where · whose · when</text>
+    <text x="200" y="152" text-anchor="middle" class="s-text s">relative word = he / it / there / his / then</text>
+    <g class="float"><text x="50" y="190" font-size="32">🕹️</text></g><g class="float d2"><text x="190" y="196" font-size="30">👻</text></g><g class="float d3"><text x="318" y="190" font-size="32">🟡</text></g>`);
 
-  return { trial, tobe1, tobe2, presimple, chunks, beordo, negatives, questions, questions2, visual, mistakes };
+  return { trial, tobe1, tobe2, presimple, chunks, beordo, negatives, questions, questions2, relative, mistakes };
 })();
