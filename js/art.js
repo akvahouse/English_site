@@ -99,5 +99,19 @@ const ART = (() => {
     <text x="200" y="152" text-anchor="middle" class="s-text s">relative word = he / it / there / his / then</text>
     <g class="float"><text x="50" y="190" font-size="32">🕹️</text></g><g class="float d2"><text x="190" y="196" font-size="30">👻</text></g><g class="float d3"><text x="318" y="190" font-size="32">🟡</text></g>`);
 
-  return { trial, tobe1, tobe2, presimple, chunks, beordo, negatives, questions, questions2, relative, mistakes };
+  const relative2 = wrap("Relative Clauses: practice", `
+    <g class="pulse d1"><rect x="20" y="40" width="110" height="40" rx="16" class="s-c1"/><text x="75" y="66" text-anchor="middle" class="s-text w" font-size="15">Geralt,</text></g>
+    <g class="float d2"><rect x="138" y="40" width="160" height="40" rx="16" class="s-c4"/><text x="218" y="66" text-anchor="middle" class="s-text w" font-size="14">whose hair is white,</text></g>
+    <g class="pulse d3"><rect x="306" y="40" width="80" height="40" rx="16" class="s-c3"/><text x="346" y="66" text-anchor="middle" class="s-text w" font-size="14">is a…</text></g>
+    <text x="200" y="118" text-anchor="middle" class="s-text" font-size="15">who · whose · which · where · when</text>
+    <text x="200" y="146" text-anchor="middle" class="s-text s">вставка в середину речення — у комах</text>
+    <g class="float"><text x="48" y="192" font-size="32">🦒</text></g><g class="float d2"><text x="184" y="196" font-size="30">🎄</text></g><g class="float d3"><text x="318" y="192" font-size="32">⚔️</text></g>`);
+
+  const jobs = wrap("Talking About Your Job", `
+    <g class="pulse d1"><rect x="34" y="34" width="332" height="44" rx="16" class="s-c1"/><text x="200" y="62" text-anchor="middle" class="s-text w" font-size="15">I work for a company where I'm…</text></g>
+    <g class="float d2"><rect x="70" y="92" width="260" height="34" rx="14" class="s-c3"/><text x="200" y="114" text-anchor="middle" class="s-text w" font-size="14">responsible for visual effects</text></g>
+    <text x="200" y="150" text-anchor="middle" class="s-text s">producer · team lead · VFX artist · QA tester</text>
+    <g class="float"><text x="44" y="194" font-size="30">🎬</text></g><g class="float d2"><text x="140" y="196" font-size="30">💥</text></g><g class="float d3"><text x="236" y="194" font-size="30">📱</text></g><g class="float"><text x="320" y="196" font-size="30">⏳</text></g>`);
+
+  return { trial, tobe1, tobe2, presimple, chunks, beordo, negatives, questions, questions2, relative, relative2, jobs, mistakes };
 })();

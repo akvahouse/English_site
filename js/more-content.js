@@ -66,6 +66,27 @@ const CARDS = {
     ["🧮", "much / many", "much — незлічуване, many — злічуване", "much electricity, many people"],
     ["🛠️", "do / make", "do homework, make a mistake", "I do homework. I make mistakes."]
   ],
+  relative2: [
+    ["🦒", "whose", "чий — і для людей, і для речей та місць", "Odessa Zoo, whose elephant is old, is in the news."],
+    ["🐶", "who", "люди і тварини, яких ми знаємо", "The cats who I feed are always hungry."],
+    ["🎄", "when", "будь-який час: 6 p.m., Christmas", "Christmas is the time when a lot of magic happens."],
+    ["🏙️", "in which = where", "тільки для місць", "Silent Hill is a town in which strange things happen."],
+    ["🎮", "a game which…", "гра — річ, не місце", "Dota 2 is a game which millions of people play."],
+    ["✂️", "вставка в середині", "кома + who/which… + кома", "Toru Iwatani, who created Pac-Man, is a designer."],
+    ["📝", "isn't correct", "з прикметником be, не do", "Maybe yes, but it isn't correct."],
+    ["🪜", "easier", "без more: easy → easier", "This topic is easier now."]
+  ],
+  jobs: [
+    ["🐟", "an acquisition", "велика компанія купує меншу", "Last year there was an acquisition."],
+    ["🎬", "behind the scenes", "за лаштунками", "I know what happens behind the scenes."],
+    ["🏔️", "the peak", "найвища точка (без highest)", "Iron Man was the peak of 3D graphics."],
+    ["🌊", "deep knowledge", "глибокі знання (не wide)", "A team lead has deep knowledge."],
+    ["⏳", "a tight deadline", "стислий термін", "Every project has a tight deadline."],
+    ["📝", "a brief", "завдання від клієнта", "The client sends a brief."],
+    ["💬", "give feedback", "давати відгук", "On Friday the team gives feedback."],
+    ["🤝", "an acquaintance", "знайомий, someone I know", "One guy I know fixed my car."],
+    ["⚙️", "mechanics", "ch = /k/", "I like the mechanics of this game."]
+  ],
   relative: [
     ["🧑", "who", "людина (замінює he / she)", "Mario is a character who jumps on enemies."],
     ["🎮", "which / that", "річ, гра (замінює it)", "Tetris is a game that you can play on any device."],

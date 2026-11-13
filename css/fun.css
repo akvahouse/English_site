@@ -211,3 +211,11 @@ a.card:hover .card-art .art{transform:scale(1.06) rotate(-1deg)}
 @media (prefers-reduced-motion:reduce){.sc-e,.stage{animation:none}}
 .vsc{font-size:34px;width:150px;white-space:nowrap}
 .vtable td{vertical-align:middle}
+
+/* ---------- 12-та і 13-та картки ---------- */
+.card:nth-child(12) .num{background:#e6f6ec;color:#1d7a43}
+.card:nth-child(13) .num{background:#fff4d6;color:#94650a}
+@media (prefers-color-scheme:dark){
+.card:nth-child(12) .num{background:#15301f;color:#7fd6a0}
+.card:nth-child(13) .num{background:#3a2f12;color:#f2c75c}
+}
