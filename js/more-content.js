@@ -87,6 +87,17 @@ const CARDS = {
     ["🤝", "an acquaintance", "знайомий, someone I know", "One guy I know fixed my car."],
     ["⚙️", "mechanics", "ch = /k/", "I like the mechanics of this game."]
   ],
+  lookwatch: [
+    ["👀", "look at", "короткий погляд (завжди at)", "Look at the board, please."],
+    ["📺", "watch", "довгий процес: фільм, серіал, tutorial", "I watch a tutorial every evening."],
+    ["👁️", "see", "бачити: здатність, факт, результат", "I've seen this film."],
+    ["👶", "look after", "доглядати", "Can you look after my dog?"],
+    ["🪟", "look out of the window", "дивитися у вікно", "I look out of the window and see the city."],
+    ["🔑", "whose", "чий — і для речей", "We have a project whose deadline is next week."],
+    ["🗄️", "a chest of drawers", "комод, тумба з шухлядами", "I keep my computer in a chest of drawers."],
+    ["🔌", "an electricity outage", "відключення світла", "Yesterday we had an electricity outage."],
+    ["🐕", "bark at", "гавкати на (не bark to)", "My dog barks at loud noises."]
+  ],
   relative: [
     ["🧑", "who", "людина (замінює he / she)", "Mario is a character who jumps on enemies."],
     ["🎮", "which / that", "річ, гра (замінює it)", "Tetris is a game that you can play on any device."],

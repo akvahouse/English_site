@@ -113,5 +113,13 @@ const ART = (() => {
     <text x="200" y="150" text-anchor="middle" class="s-text s">producer · team lead · VFX artist · QA tester</text>
     <g class="float"><text x="44" y="194" font-size="30">🎬</text></g><g class="float d2"><text x="140" y="196" font-size="30">💥</text></g><g class="float d3"><text x="236" y="194" font-size="30">📱</text></g><g class="float"><text x="320" y="196" font-size="30">⏳</text></g>`);
 
-  return { trial, tobe1, tobe2, presimple, chunks, beordo, negatives, questions, questions2, relative, relative2, jobs, mistakes };
+  const lookwatch = wrap("Look, Watch, See", `
+    <g class="pulse d1"><rect x="24" y="40" width="108" height="40" rx="16" class="s-c1"/><text x="78" y="66" text-anchor="middle" class="s-text w" font-size="16">look at</text></g>
+    <g class="pulse d2"><rect x="146" y="40" width="108" height="40" rx="16" class="s-c3"/><text x="200" y="66" text-anchor="middle" class="s-text w" font-size="16">watch</text></g>
+    <g class="pulse d3"><rect x="268" y="40" width="108" height="40" rx="16" class="s-c2"/><text x="322" y="66" text-anchor="middle" class="s-text w" font-size="16">see</text></g>
+    <text x="200" y="118" text-anchor="middle" class="s-text" font-size="15">a glance · a process · a fact</text>
+    <text x="200" y="146" text-anchor="middle" class="s-text s">who · which · where · when · whose</text>
+    <g class="float"><text x="44" y="194" font-size="30">👀</text></g><g class="float d2"><text x="140" y="196" font-size="30">📺</text></g><g class="float d3"><text x="236" y="194" font-size="30">🪟</text></g><g class="float"><text x="320" y="196" font-size="30">🖥️</text></g>`);
+
+  return { trial, tobe1, tobe2, presimple, chunks, beordo, negatives, questions, questions2, relative, relative2, jobs, lookwatch, mistakes };
 })();

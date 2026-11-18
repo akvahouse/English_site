@@ -219,3 +219,9 @@ a.card:hover .card-art .art{transform:scale(1.06) rotate(-1deg)}
 .card:nth-child(12) .num{background:#15301f;color:#7fd6a0}
 .card:nth-child(13) .num{background:#3a2f12;color:#f2c75c}
 }
+
+/* ---------- 14-та картка ---------- */
+.card:nth-child(14) .num{background:#fbe9e1;color:#a2401c}
+@media (prefers-color-scheme:dark){
+.card:nth-child(14) .num{background:#3a1d12;color:#f29a76}
+}
